@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Office Spaces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Zip</th>
+      <th>City</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @office_spaces.each do |office_space| %>
+      <tr>
+        <td><%= image_tag(office_space.photo, width: '100px') %></td>
+        <td><%= office_space.name %></td>
+        <td><%= office_space.address %></td>
+        <td><%= office_space.zip %></td>
+        <td><%= office_space.city %></td>
+        <td><%= office_space.description %></td>
+        <td><%= link_to 'Show', office_space %></td>
+        <td><%= link_to 'Edit', edit_office_space_path(office_space) %></td>
+        <td><%= link_to 'Destroy', office_space, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Office space', new_office_space_path %>
