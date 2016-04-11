@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Address</th>
       <th>Zip</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @office_spaces.each do |office_space| %>
       <tr>
+        <td><%= image_tag(office_space.photo, width: '100px') %></td>
         <td><%= office_space.name %></td>
         <td><%= office_space.address %></td>
         <td><%= office_space.zip %></td>
