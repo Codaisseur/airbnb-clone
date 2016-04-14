@@ -25,5 +25,7 @@
   <%= @office_space.description %>
 </p>
 
+<%= render "/reservations/form" %>
+
 <%= link_to 'Edit', edit_office_space_path(@office_space) %> |
 <%= link_to 'Back', office_spaces_path %>

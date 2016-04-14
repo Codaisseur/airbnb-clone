@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :office_spaces
+
+  resources :office_spaces do
+    resources :reservations
+  end
+
   root 'office_spaces#index'
-  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

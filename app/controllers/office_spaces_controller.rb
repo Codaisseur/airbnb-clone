@@ -10,6 +10,7 @@ class OfficeSpacesController < ApplicationController
   # GET /office_spaces/1
   # GET /office_spaces/1.json
   def show
+    @reservation = Reservation.new
   end
 
   # GET /office_spaces/new
@@ -25,6 +26,7 @@ class OfficeSpacesController < ApplicationController
   # POST /office_spaces.json
   def create
     @office_space = OfficeSpace.new(office_space_params)
+    @office_space.user = current_user
 
     respond_to do |format|
       if @office_space.save
