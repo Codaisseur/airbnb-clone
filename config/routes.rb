@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :office_spaces
   root 'office_spaces#index'
   resources :users
