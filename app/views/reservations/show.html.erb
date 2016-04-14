@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to office_space_reservations_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_office_space_reservation_path(@office_space, @reservation), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show reservation</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>User:</dt>
+  <dd><%= @reservation.user %></dd>
+
+  <dt>Office space:</dt>
+  <dd><%= @reservation.office_space %></dd>
+
+  <dt>Start date:</dt>
+  <dd><%= @reservation.start_date %></dd>
+
+  <dt>End date:</dt>
+  <dd><%= @reservation.end_date %></dd>
+
+</dl>
